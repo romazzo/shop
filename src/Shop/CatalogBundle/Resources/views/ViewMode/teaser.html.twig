@@ -1,0 +1,21 @@
+{% set path = path('product_view', { 'id' : item.id}) %}
+<li class="span4">
+    <div class="thumbnail">
+        <a class="zoomTool" href="{{ path }}" title="add to cart"><span class="icon-search"></span> QUICK VIEW</a>
+        <a  href="{{ path }}"><img src="{{ asset('/templace/') }}{{ item.image }}" alt=""></a>
+        <div class="caption">
+            <h5>{{ item.name }}</h5>
+            <h4>
+
+                <a class="defaultBtn" href="{{ path }}" title="Click to view"><span class="icon-zoom-in"></span></a>
+                {% set path = path('cart', { 'id' : item.id}) %}
+                <a class="shopBtn" href="{{ path }}" title="add to cart"><span class="icon-plus"></span></a>
+                <span class="pull-right">${{ item.price }}</span>
+            </h4>
+        </div>
+    </div>
+</li>
+
+
+
+

@@ -1,0 +1,16 @@
+{% extends 'ShopCatalogBundle:Default:cart.html.twig' %}
+
+{% block regionRight %}
+    <div class="block block--product-list">
+        <div class="block-content">
+            <div class="list list--page-list">
+                {% for product in products %}
+                    <div class="list-item">
+                        {% include('ShopCatalogBundle:ViewMode:teaser.html.twig') %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{{ dump(products) }}
+{% endblock %}

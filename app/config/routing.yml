@@ -1,0 +1,2 @@
+shop_catalog:
+    resource: "@ShopCatalogBundle/Resources/config/routing.yml"

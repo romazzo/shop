@@ -1,0 +1,15 @@
+product_list:
+  path: /product
+  defaults: { _controller: ShopCatalogBundle:Product:list }
+
+product_view:
+  path: /product/{id}
+  defaults: { _controller: ShopCatalogBundle:Product:view }
+
+product_load:
+  path: /product/load
+  defaults: { _controller: ShopCatalogBundle:Product:image }
+
+cart:
+  path: /cart/{id}
+  defaults: { _controller: ShopCatalogBundle:Cart:cart }
