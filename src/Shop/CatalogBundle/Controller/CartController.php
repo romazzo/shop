@@ -13,17 +13,15 @@ class CartController extends Controller{
 
 
     public function cartAction(Request $request, $id){
-        $session = new Session();
         
         $cartRepo = $this->getDoctrine()->getRepository('ShopCatalogBundle:Product');
         $cart = $cartRepo->find($id);
         if(!$cart){
             throw $this->createNotFoundException('Cart is not found');
         }
-
-        $session->set('shopping_cart', $cart);
+        
+        $this->get('session')->set('shopping_cart', $cart);
         $shopping_cart = $session->get('shopping_cart');
-
 
         return $this->render('ShopCatalogBundle:Cart:cart.html.twig', [
             'cart' => $cart,
