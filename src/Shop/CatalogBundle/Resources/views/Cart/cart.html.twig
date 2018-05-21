@@ -1,8 +1,14 @@
 {% extends 'ShopCatalogBundle:Default:index.html.twig' %}
 
 {% block regionRight %}
-   {{ dump(shopping_cart) }}
+    {{ dump(productos) }}
 
+
+    <ul>
+        {% for item in productos %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
 
     <div class="well well-small">
     <h1>Check Out <small class="pull-right"> 2 Items are in the cart </small></h1>
@@ -21,29 +27,26 @@
         </tr>
         </thead>
         <tbody>
-        {% for carts in cart %}
+
         <tr>
-            {% for carts in cart %}
-
-
-            <td><img width="100" src="{{ asset('/templace/') }}{{ carts.image }}" alt=""></td>
+            <td><img width="100" src="{{ asset('/templace/') }}{{ cart.image }}" alt=""></td>
             <td>Items name here<br>Carate : 22<br>Model : n/a</td>
             <td> - </td>
             <td><span class="shopBtn"><span class="icon-ok"></span></span> </td>
-            <td>${{ carts.price }}</td>
+            <td>${{ cart.price }}</td>
             <td>
                 <input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text" value="2">
                 <div class="input-append">
                     <button class="btn btn-mini" type="button">-</button><button class="btn btn-mini" type="button"> + </button><button class="btn btn-mini btn-danger" type="button"><span class="icon-remove"></span></button>
                 </div>
             </td>
-            <td>${{ carts.price }}</td>
+            <td>${{ cart.price }}</td>
         </tr>
         <tr>
             <td colspan="6" class="alignR">Total products:	</td>
             <td class="label label-primary"> $448.42</td>
         </tr>
-        {% endfor %}
+
         </tbody>
     </table><br/>
 

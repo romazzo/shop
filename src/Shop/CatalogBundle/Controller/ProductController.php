@@ -35,7 +35,7 @@ class ProductController extends Controller{
 
         $imageRepo = $em->getRepository(Image::class);
         $images = $imageRepo->findLastImages($product, 5);
-        dump($images);
+        //dump($images);
         return $this->render('ShopCatalogBundle:Product:view.html.twig', [
             'product' => $product,
             'productDescription' => $productDescription,
